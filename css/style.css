@@ -36,7 +36,7 @@ Variables
   --clr-secondary-dark-4: #1c0871;
   --clr-secondary-dark-5: #18075e;
   --clr-secondary-dark-6: #13054c;
-  -clr-secondary-dark-7: #0f043a;
+  --clr-secondary-dark-7: #0f043a;
   --clr-secondary-dark-8: #0a0327;
   --clr-secondary-dark-9: #050115;
   --clr-orange: #fc5130;
@@ -59,6 +59,13 @@ Nav
 */
 .nav {
   background: var(--clr-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .nav__header {
@@ -206,11 +213,11 @@ Header
       from(rgba(0, 0, 0, 0.5)),
       to(rgba(0, 0, 0, 0.5))
     ),
-    url("../img/portfoliohero.jpg") no-repeat 50% 60% / cover fixed;
+    url("../img/portfoliohero-min.jpg") no-repeat 50% 60% / cover fixed;
   background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/portfoliohero.jpg") no-repeat 50% 60% / cover fixed;
+    url("../img/portfoliohero-min.jpg") no-repeat 50% 60% / cover fixed;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/portfoliohero.jpg") no-repeat 50% 60% / cover fixed;
+    url("../img/portfoliohero-min.jpg") no-repeat 50% 60% / cover fixed;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,11 +311,12 @@ About Section
   background: var(--clr-primary);
   letter-spacing: var(--spacing);
   max-width: 400px;
-  text-align: center;
+  text-align: right;
   -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
   border: 3px solid var(--clr-secondary);
   margin: 0 auto;
+  padding-right: 1rem;
 }
 
 .about-info__text {
@@ -574,11 +582,11 @@ Numbers Section
       from(rgba(0, 0, 0, 0.5)),
       to(rgba(0, 0, 0, 0.5))
     ),
-    url("../img/numbershero.jpg") no-repeat 50% 30% / cover;
+    url("../img/numbershero-min.jpg") no-repeat 50% 30% / cover;
   background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/numbershero.jpg") no-repeat 50% 30% / cover;
+    url("../img/numbershero-min.jpg") no-repeat 50% 30% / cover;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/numbershero.jpg") no-repeat 50% 30% / cover;
+    url("../img/numbershero-min.jpg") no-repeat 50% 30% / cover;
   -o-object-fit: cover fixed;
   object-fit: cover fixed;
   color: var(--clr-white);
@@ -660,6 +668,12 @@ Projects Section
 .projects__center {
   max-width: 90vw;
   margin: 2rem auto;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
 }
 
 .projects__single-project {
@@ -783,9 +797,10 @@ Contact Section
   background: transparent;
   border: none;
   border-bottom: 3px solid var(--clr-primary);
-  padding: 0.25rem 0;
+  padding: 0.5rem 0.5rem;
   margin: 2rem 0;
   font-size: 1.2rem;
+  letter-spacing: 1px;
 }
 
 .contact__name,
@@ -882,7 +897,7 @@ About Page
 .header-page {
   height: 70vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/abouthero.jpg") no-repeat 50% 60% / cover fixed;
+    url("../img/abouthero-min.jpg") no-repeat 50% 60% / cover fixed;
   display: flex;
   flex-direction: column;
 }
@@ -905,7 +920,7 @@ About Page
 .numbers {
   padding: 3.5rem 0;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/codebackground.jpg") no-repeat 50% 30% / cover;
+    url("../img/codebackground-min.jpg") no-repeat 50% 30% / cover;
   object-fit: cover fixed;
   color: var(--clr-white);
 }
@@ -969,7 +984,7 @@ Services Page
 */
 .services-page {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/serviceshero.jpg") no-repeat 50% 60% / cover fixed;
+    url("../img/serviceshero-min.jpg") no-repeat 50% 60% / cover fixed;
 }
 
 .service-card {
@@ -1071,6 +1086,11 @@ Services Page
   padding: 0.25rem 0.6rem;
   border-radius: 50%;
   border: 2px solid var(--clr-white);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .service-info {
@@ -1105,7 +1125,7 @@ Services Page
 */
 .projects-page {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/projectshero2.jpg") no-repeat 50% 60% / cover fixed;
+    url("../img/projectshero2-min.jpg") no-repeat 50% 60% / cover fixed;
 }
 
 /*
@@ -1115,5 +1135,5 @@ Contact Page
 */
 .contact-page {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/contacthero.jpg") no-repeat 50% 60% / cover fixed;
+    url("../img/contacthero-min.jpg") no-repeat 50% 60% / cover fixed;
 }
